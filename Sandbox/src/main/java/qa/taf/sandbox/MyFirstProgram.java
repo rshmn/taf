@@ -1,4 +1,6 @@
-public class MyFirstProgram{
+package qa.taf.sandbox;
+
+public class MyFirstProgram {
 
 	public static void main(String[] args) {
 		
