@@ -18,6 +18,7 @@ public class GroupCreationTests {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         login("admin", "secret");
+
     }
 
     private void login(String username, String password) {
