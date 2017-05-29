@@ -1,7 +1,6 @@
 package qa.taf.adressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import qa.taf.adressbook.model.ContactData;
@@ -28,7 +27,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("middlename"),contactData.getMiddlename());
         type(By.name("lastname"),contactData.getLastname());
         type(By.name("nickname"),contactData.getNickname());
-        selectphoto(By.xpath("//div[@id='content']/form/input[7]"),contactData.getPhotopath());
+        selectPhoto(By.xpath("//div[@id='content']/form/input[7]"),contactData.getPhotopath());
         type(By.name("title"),contactData.getTitle());
         type(By.name("company"),contactData.getCompany());
         type(By.name("address"),contactData.getAddress());
@@ -43,20 +42,13 @@ public class ContactHelper extends HelperBase {
         setBirthday(contactData);
         setAnnDay(contactData);
         setGroupForContact(contactData);
-        wd.findElement(By.name("address2")).click();
-        wd.findElement(By.name("address2")).clear();
-        wd.findElement(By.name("address2")).sendKeys(contactData.getAddress2());
-        wd.findElement(By.name("theform")).click();
-        wd.findElement(By.name("phone2")).click();
-        wd.findElement(By.name("phone2")).clear();
-        wd.findElement(By.name("phone2")).sendKeys(contactData.getPhonehome2());
-        wd.findElement(By.name("notes")).click();
-        wd.findElement(By.name("notes")).clear();
-        wd.findElement(By.name("notes")).sendKeys(contactData.getNotes());
+        type(By.name("address2"),contactData.getAddress2());
+        type(By.name("phone2"),contactData.getPhonehome2());
+        type(By.name("notes"),contactData.getNotes());
 
     }
 
-    private void selectphoto(By locator, String photopath) {
+    private void selectPhoto(By locator, String photopath) {
         wd.findElement(locator).sendKeys(photopath);
     }
 
@@ -64,6 +56,10 @@ public class ContactHelper extends HelperBase {
         Select groupNameDropdown = new Select(wd.findElement(By.name("new_group")));
         groupNameDropdown.selectByVisibleText(contactData.getGroupname());
     }
+//    private void selectDropdown(ContactData contactData, By locator) {
+//        Select dropdown = new Select(wd.findElement(locator));
+//        dropdown.selectByVisibleText(contactData.getGroupname());
+//    }
 
     private void setAnnDay(ContactData contactData) {
         Select adaydd = new Select(wd.findElement(By.name("aday")));
