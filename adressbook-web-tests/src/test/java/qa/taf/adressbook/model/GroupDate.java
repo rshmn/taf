@@ -1,4 +1,4 @@
-package qa.taf.adressbook;
+package qa.taf.adressbook.model;
 
 public class GroupDate {
     private final String name;

@@ -1,4 +1,4 @@
-package qa.taf.adressbook;
+package qa.taf.adressbook.model;
 
 public class ContactData {
     private final String firstname;

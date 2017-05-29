@@ -1,3 +1,5 @@
+package qa.taf.adressbook.tests;
+
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeMethod;
@@ -8,10 +10,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
-import qa.taf.adressbook.ContactData;
+import qa.taf.adressbook.model.ContactData;
 
 
-public class ContactCreation {
+public class ContactCreationTests {
     FirefoxDriver wd;
     
     @BeforeMethod
