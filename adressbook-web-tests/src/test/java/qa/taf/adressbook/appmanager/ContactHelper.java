@@ -103,10 +103,14 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectContact() {
-        click(By.xpath("//input[@id='1']"));
+        click(By.xpath("//input[@name='selected[]']"));
     }
 
     public void deleteContact() {
         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    }
+
+    public void selectAllContact() {
+        click(By.id("MassCB"));
     }
 }
