@@ -103,7 +103,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectContact() {
-        click(By.xpath("//input[@name='selected[]']"));
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[1]/input"));
     }
 
     public void deleteContact() {
