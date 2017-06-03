@@ -19,7 +19,8 @@ public class ContactHelper extends HelperBase {
     }
 
     public void submitContactForm() {
-        wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+
+        click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
     public void fillContactForm(ContactData contactData) {
@@ -42,6 +43,30 @@ public class ContactHelper extends HelperBase {
         setBirthday(contactData);
         setAnnDay(contactData);
         setGroupForContact(contactData);
+        type(By.name("address2"),contactData.getAddress2());
+        type(By.name("phone2"),contactData.getPhonehome2());
+        type(By.name("notes"),contactData.getNotes());
+
+    }
+    public void editContactForm(ContactData contactData) {
+        type(By.name("firstname"),contactData.getFirstname());
+        type(By.name("middlename"),contactData.getMiddlename());
+        type(By.name("lastname"),contactData.getLastname());
+        type(By.name("nickname"),contactData.getNickname());
+        selectPhoto(By.xpath("//div[@id='content']/form/input[7]"),contactData.getPhotopath());
+        type(By.name("title"),contactData.getTitle());
+        type(By.name("company"),contactData.getCompany());
+        type(By.name("address"),contactData.getAddress());
+        type(By.name("home"),contactData.getHomephonenumber());
+        type(By.name("mobile"),contactData.getMobilephonenumber());
+        type(By.name("work"),contactData.getWorkphonenumber());
+        type(By.name("fax"),contactData.getFaxphonenumber());
+        type(By.name("email"),contactData.getEmail1());
+        type(By.name("email2"),contactData.getEmail2());
+        type(By.name("email3"),contactData.getEmail3());
+        type(By.name("homepage"),contactData.getHomepage());
+        setBirthday(contactData);
+        setAnnDay(contactData);
         type(By.name("address2"),contactData.getAddress2());
         type(By.name("phone2"),contactData.getPhonehome2());
         type(By.name("notes"),contactData.getNotes());
@@ -76,6 +101,10 @@ public class ContactHelper extends HelperBase {
         bmonthdd.selectByVisibleText(contactData.getBmonth());
         type(By.name("byear"),contactData.getByear());
     }
-
-
+    public void editContact(){
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    }
+    public void updateContact(){
+        click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+    }
 }
