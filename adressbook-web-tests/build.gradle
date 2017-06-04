@@ -10,7 +10,7 @@ repositories{
 dependencies{
 
     compile 'org.seleniumhq.selenium:selenium-java:3.4.0'
-compile 'org.testng:testng:6.11'
+    compile 'org.testng:testng:6.11'
 
 }
 

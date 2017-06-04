@@ -2,6 +2,7 @@ package qa.taf.adressbook.appmanager;
 
 import com.sun.javafx.binding.ExpressionHelperBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import qa.taf.adressbook.model.GroupDate;
 
@@ -10,7 +11,7 @@ import qa.taf.adressbook.model.GroupDate;
  */
 public class GroupHelper extends HelperBase{
 
-    public GroupHelper(FirefoxDriver wd) {
+    public GroupHelper(WebDriver wd) {
         super(wd);
     }
 
