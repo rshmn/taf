@@ -51,6 +51,12 @@ public class ContactHelper extends HelperBase {
         Select groupNameDropdown = new Select(wd.findElement(By.name("new_group")));
         groupNameDropdown.selectByVisibleText(contactData.getGroupname());
     }
+    public void createContact(ContactData data, boolean b){
+
+        fillContactForm(data, b);
+        submitContactForm();
+        returnHome();
+    }
 //
 //    private void setAnnDay(ContactData contactData) {
 //        Select adaydd = new Select(wd.findElement(By.name("aday")));
@@ -78,10 +84,7 @@ public class ContactHelper extends HelperBase {
     public void updateContact(){
         click(By.xpath("//div[@id='content']/form[1]/input[22]"));
     }
-
-    public void acceptAlert(){
-        wd.switchTo().alert().accept();
-    }
+    public void returnHome() { click(By.xpath("//div[@class='msgbox']//a[.='home page']"));}
 
     public void selectContact() {
         click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[1]/input"));
@@ -93,5 +96,9 @@ public class ContactHelper extends HelperBase {
 
     public void selectAllContact() {
         click(By.id("MassCB"));
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
     }
 }

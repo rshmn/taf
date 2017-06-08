@@ -1,10 +1,10 @@
 package qa.taf.adressbook.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Alert;
 
 /**
  * Created by rushman on 5/29/17.
@@ -49,6 +49,14 @@ public class HelperBase {
         catch (NoSuchElementException ex) {
             return false;
         }
+
+    }
+
+    public void acceptAlert(){
+            WebDriverWait  wait = new WebDriverWait(wd, 10);
+            wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = wd.switchTo().alert();
+            alert.accept();
 
     }
 }
