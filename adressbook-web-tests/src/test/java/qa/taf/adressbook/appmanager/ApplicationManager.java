@@ -35,7 +35,7 @@ public class ApplicationManager {
         } else if (Objects.equals(browser, BrowserType.SAFARI)){
             wd = new SafariDriver();
         }
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         contactHelper = new ContactHelper(wd);

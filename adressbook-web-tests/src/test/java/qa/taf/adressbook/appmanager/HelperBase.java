@@ -58,5 +58,6 @@ public class HelperBase {
             Alert alert = wd.switchTo().alert();
             alert.accept();
 
+
     }
 }
