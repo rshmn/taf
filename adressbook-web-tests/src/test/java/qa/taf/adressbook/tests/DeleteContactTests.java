@@ -1,5 +1,6 @@
 package qa.taf.adressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.taf.adressbook.model.ContactData;
 
@@ -10,6 +11,7 @@ public class DeleteContactTests extends TestBase{
     @Test(priority=1)
       public void DeleteContact(){
         app.getNavigationHelper().goHome();
+        int before = app.getContactHelper().getContactCount();
         if(! app.getContactHelper().isThereAContact()){
             app.getNavigationHelper().addNewContact();
             app.getContactHelper().createContact(new ContactData("Cyril", "Puhalskiy", "/Users/rushman/Desktop/1.jpg", "Ukraine,Dnipro", "+380682323232", "+30562343434", "Email1@email.com", "http://www.Homepageurl.com","Test group1"), true);
@@ -18,6 +20,8 @@ public class DeleteContactTests extends TestBase{
         app.getContactHelper().deleteContact();
         app.getContactHelper().acceptAlert();
         app.getNavigationHelper().goHome();
+        int after = app.getGroupHelper().getGroupCount();
+        Assert.assertEquals(before, after + 1);
 
     }
 
