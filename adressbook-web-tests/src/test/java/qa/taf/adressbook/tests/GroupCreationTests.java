@@ -3,7 +3,9 @@ package qa.taf.adressbook.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import qa.taf.adressbook.model.GroupDate;
+import qa.taf.adressbook.model.GroupData;
+
+import java.util.List;
 
 
 public class GroupCreationTests extends TestBase{
@@ -11,10 +13,10 @@ public class GroupCreationTests extends TestBase{
     @Test
     public void testGroupCreation() {
         app.getNavigationHelper().gotoGroupPage();
-        int before = app.getGroupHelper().getGroupCount();
-        app.getGroupHelper().createGroup(new GroupDate("Test group1", "Group header test1", "group footer"));
-        int after = app.getGroupHelper().getGroupCount();
-        Assert.assertEquals(after,before + 1);
+        List<GroupData> before = app.getGroupHelper().getGroupList();
+        app.getGroupHelper().createGroup(new GroupData("Test group1", "Group header test1", "group footer"));
+        List<GroupData> after = app.getGroupHelper().getGroupList();
+        Assert.assertEquals(after.size(),before.size() + 1);
     }
 
 }

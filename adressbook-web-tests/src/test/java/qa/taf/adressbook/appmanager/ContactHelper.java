@@ -78,16 +78,17 @@ public class ContactHelper extends HelperBase {
 //        type(By.name("phone2"),contactData.getPhonehome2());
 //        type(By.name("notes"),contactData.getNotes());
 //    }
-    public void editContact(){
-        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    public void editContact(int index){
+        int cell = 2 + index;
+        click(By.xpath("//table[@id='maintable']/tbody/tr[" + cell + "]/td[8]/a/img"));
     }
     public void updateContact(){
         click(By.xpath("//div[@id='content']/form[1]/input[22]"));
     }
     public void returnHome() { click(By.xpath("//div[@class='msgbox']//a[.='home page']"));}
 
-    public void selectContact() {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[1]/input"));
+    public void selectContact(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 
     public void deleteContact() {
