@@ -13,7 +13,7 @@ public class DeleteContactTests extends TestBase{
         app.getNavigationHelper().goHome();
         if(! app.getContactHelper().isThereAContact()){
             app.getNavigationHelper().addNewContact();
-            app.getContactHelper().createContact(new ContactData("Cyril", "Puhalskiy", "/Users/rushman/Desktop/1.jpg", "Ukraine,Dnipro", "+380682323232", "+30562343434", "Email1@email.com", "http://www.Homepageurl.com","Test group1"), true);
+            app.getContactHelper().createContact(new ContactData("Cyril", "Puhalskiy","Ukraine,Dnipro", "+380682323232", "+30562343434", "Email1@email.com", "http://www.Homepageurl.com","Test group1"), true);
         }
         int before = app.getContactHelper().getContactCount();
         app.getContactHelper().selectContact(before -1);

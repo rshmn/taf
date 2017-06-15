@@ -29,7 +29,7 @@ public class ContactHelper extends HelperBase {
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"),contactData.getFirstname());
         type(By.name("lastname"),contactData.getLastname());
-        selectPhoto(By.xpath("//div[@id='content']/form/input[7]"),contactData.getPhotopath());
+        //selectPhoto(By.xpath("//div[@id='content']/form/input[7]"),contactData.getPhotopath());
         type(By.name("address"),contactData.getAddress());
         type(By.name("home"),contactData.getHomephonenumber());
         type(By.name("work"),contactData.getWorkphonenumber());
@@ -43,9 +43,9 @@ public class ContactHelper extends HelperBase {
 
     }
 
-    private void selectPhoto(By locator, String photopath) {
-        wd.findElement(locator).sendKeys(photopath);
-    }
+//    //private void selectPhoto(By locator, String photopath) {
+//        wd.findElement(locator).sendKeys(photopath);
+//    }
 
     private void setGroupForContact(ContactData contactData) {
         Select groupNameDropdown = new Select(wd.findElement(By.name("new_group")));
@@ -56,6 +56,7 @@ public class ContactHelper extends HelperBase {
         fillContactForm(data, b);
         submitContactForm();
         returnHome();
+
     }
 //
 //    private void setAnnDay(ContactData contactData) {
@@ -85,7 +86,8 @@ public class ContactHelper extends HelperBase {
     public void updateContact(){
         click(By.xpath("//div[@id='content']/form[1]/input[22]"));
     }
-    public void returnHome() { click(By.xpath("//div[@class='msgbox']//a[.='home page']"));}
+
+    public void returnHome() { click(By.linkText("home"));}
 
     public void selectContact(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
