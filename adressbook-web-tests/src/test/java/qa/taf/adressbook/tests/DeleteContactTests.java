@@ -4,34 +4,32 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.taf.adressbook.model.ContactData;
 
+import java.util.List;
+
 /**
  * Created by rushman on 5/29/17.
  */
 public class DeleteContactTests extends TestBase{
     @Test(priority=1)
-      public void DeleteContact(){
+      public void DeleteContact() {
         app.getNavigationHelper().goHome();
-        if(! app.getContactHelper().isThereAContact()){
+        if (!app.getContactHelper().isThereAContact()) {
             app.getNavigationHelper().addNewContact();
-            app.getContactHelper().createContact(new ContactData("Cyril", "Puhalskiy","Ukraine,Dnipro", "+380682323232", "+30562343434", "Email1@email.com", "http://www.Homepageurl.com","Test group1"), true);
+            ContactData contact = new ContactData("Cyril", "Puhalskiy", "Ukraine,Dnipro", "+380682323232", "+30562343434", "Email1@email.com", "http://www.Homepageurl.com", "Test group1");
+            app.getContactHelper().createContact(contact, true);
         }
-        int before = app.getContactHelper().getContactCount();
-        app.getContactHelper().selectContact(before -1);
-        app.getContactHelper().deleteContact();
-        app.getContactHelper().acceptAlert();
-        app.getNavigationHelper().goHome();
-        int after = app.getGroupHelper().getGroupCount();
-        Assert.assertEquals(before, after + 1);
+            List<ContactData> before = app.getContactHelper().getContactList();
+            app.getContactHelper().selectContact(before.size() - 1);
+            app.getContactHelper().deleteContact();
+            app.getContactHelper().acceptAlert();
+            app.getNavigationHelper().goHome();
+            List<ContactData> after = app.getContactHelper().getContactList();
+            Assert.assertEquals(before.size(), after.size() + 1);
+
+            before.remove(before.size() - 1);
+            Assert.assertEquals(before, after);
+
 
     }
-
-//    @Test(priority=2)
-//      public void DeleteAllContacts(){
-//        app.getNavigationHelper().goHome();
-//        app.getContactHelper().selectAllContact();
-//        app.getContactHelper().deleteContact();
-//        app.getContactHelper().acceptAlert();
-//    }
-
 
 }

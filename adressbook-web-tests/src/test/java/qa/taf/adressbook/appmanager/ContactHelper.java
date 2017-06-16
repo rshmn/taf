@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import qa.taf.adressbook.model.ContactData;
+import qa.taf.adressbook.model.GroupData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -58,6 +60,18 @@ public class ContactHelper extends HelperBase {
         returnHome();
 
     }
+    public List<ContactData> getContactList() {
+        List<ContactData> contacts = new ArrayList<ContactData>();
+        List<WebElement> elements = wd.findElements(By.name("entry"));
+        for (WebElement element : elements){
+            String name = element.findElement(By.cssSelector("td:nth-child(3)")).getText();
+            String lastname = element.findElement(By.cssSelector("td:nth-child(2)")).getText();
+            String id = element.findElement(By.tagName("input")).getAttribute("value");
+            ContactData contact = new ContactData(Integer.parseInt(id), name, lastname,null,null,null,null,null,null);
+            contacts.add(contact);
+        }
+        return contacts;
+    }
 //
 //    private void setAnnDay(ContactData contactData) {
 //        Select adaydd = new Select(wd.findElement(By.name("aday")));
@@ -108,4 +122,6 @@ public class ContactHelper extends HelperBase {
     public int getContactCount() {
         return wd.findElements(By.name("selected[]")).size();
     }
+
+
 }
