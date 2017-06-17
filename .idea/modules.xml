@@ -8,7 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/adressbook-web-tests/adressbook-web-tests.iml" filepath="$PROJECT_DIR$/.idea/modules/adressbook-web-tests/adressbook-web-tests.iml" group="adressbook-web-tests" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/adressbook-web-tests/adressbook-web-tests_main.iml" filepath="$PROJECT_DIR$/.idea/modules/adressbook-web-tests/adressbook-web-tests_main.iml" group="adressbook-web-tests" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/adressbook-web-tests/adressbook-web-tests_test.iml" filepath="$PROJECT_DIR$/.idea/modules/adressbook-web-tests/adressbook-web-tests_test.iml" group="adressbook-web-tests" />
-      <module fileurl="file://$PROJECT_DIR$/taf.iml" filepath="$PROJECT_DIR$/taf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/taf.iml" filepath="$PROJECT_DIR$/.idea/modules/taf.iml" />
     </modules>
   </component>
 </project>
