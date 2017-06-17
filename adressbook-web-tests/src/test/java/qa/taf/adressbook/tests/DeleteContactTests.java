@@ -10,7 +10,8 @@ import java.util.List;
  * Created by rushman on 5/29/17.
  */
 public class DeleteContactTests extends TestBase{
-    @Test(priority=1)
+
+    @Test(enabled = false)
       public void DeleteContact() {
         app.getNavigationHelper().goHome();
         if (!app.getContactHelper().isThereAContact()) {

@@ -22,8 +22,7 @@ import static org.openqa.selenium.OutputType.*;
 
 public class EditContactTests extends TestBase {
 
-    
-    @Test
+    @Test(enabled = false)
     public void EditContact() {
         ContactData contact = new ContactData("Cyril", "Puhalskiy","Ukraine,Dnipro", "+380682323232", "+30562343434", "Email1@email.com", "http://www.Homepageurl.com","Test group1");
         if (! app.getContactHelper().isThereAContact()){
