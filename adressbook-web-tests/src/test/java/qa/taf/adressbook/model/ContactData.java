@@ -1,38 +1,79 @@
 package qa.taf.adressbook.model;
 
 public class ContactData {
-    private final int id;
-    private final String firstname;
-    private final String lastname;
-    private final String address;
-    private final String homephonenumber;
-    private final String workphonenumber;
-    private final String email1;
-    private final String groupname;
-    private final String homepage;
+    private  int id = Integer.MAX_VALUE;
+    private  String firstname;
+    private  String lastname;
+    private  String address;
+    private  String homephonenumber;
+    private  String workphonenumber;
+    private  String email1;
+    private  String groupname;
+    private  String homepage;
 
-    public ContactData(int id, String firstname,String lastname, String address, String homephonenumber, String workphonenumber, String email1, String homepage,  String groupname) {
+    public ContactData withId(int id) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.address = address;
-        this.homephonenumber = homephonenumber;
-        this.workphonenumber = workphonenumber;
-        this.email1 = email1;
-        this.groupname = groupname;
-        this.homepage = homepage;
+        return this;
     }
 
-    public ContactData(String firstname,String lastname, String address, String homephonenumber, String workphonenumber, String email1, String homepage,  String groupname) {
-        this.id = Integer.MAX_VALUE;
+    public ContactData withFirstname(String firstname) {
         this.firstname = firstname;
+        return this;
+    }
+
+    public ContactData withLastname(String lastname) {
         this.lastname = lastname;
+        return this;
+    }
+
+    public ContactData withAddress(String address) {
         this.address = address;
+        return this;
+    }
+
+    public ContactData withHomephonenumber(String homephonenumber) {
         this.homephonenumber = homephonenumber;
+        return this;
+    }
+
+    public ContactData withWorkphonenumber(String workphonenumber) {
         this.workphonenumber = workphonenumber;
+        return this;
+    }
+
+    public ContactData withEmail1(String email1) {
         this.email1 = email1;
+        return this;
+    }
+
+    public ContactData withGroupname(String groupname) {
         this.groupname = groupname;
+        return this;
+    }
+
+    public ContactData withHomepage(String homepage) {
         this.homepage = homepage;
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ContactData that = (ContactData) o;
+
+        if (id != that.id) return false;
+        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+        return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        return result;
     }
 
     public String getFirstname() {
@@ -46,24 +87,6 @@ public class ContactData {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ContactData that = (ContactData) o;
-
-        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
-        return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = firstname != null ? firstname.hashCode() : 0;
-        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
-        return result;
     }
 
     public String getLastname() {

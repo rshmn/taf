@@ -1,14 +1,11 @@
 package qa.taf.adressbook.tests;
 
 
-
 import org.testng.annotations.Test;
 import qa.taf.adressbook.model.GroupData;
 import qa.taf.adressbook.model.Groups;
 
-import java.util.Set;
-
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
@@ -18,7 +15,7 @@ public class GroupCreationTests extends TestBase{
     public void testGroupCreation() {
         app.goTo().groupPage();
         Groups before = app.group().all();
-        GroupData group = new GroupData().withName("test2");
+        GroupData group = new GroupData().withName("Test group1");
         app.group().create(group);
         Groups after = app.group().all();
         assertThat(after.size(), equalTo(before.size() + 1));

@@ -3,25 +3,33 @@ package qa.taf.adressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.taf.adressbook.model.ContactData;
-import java.util.Comparator;
-import java.util.List;
+import qa.taf.adressbook.model.Contacts;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
 
 
 public class ContactCreationTests extends TestBase{
 
 
-    @Test(enabled = false)
+    @Test
     public void ContactCreation() {
-        List<ContactData> before = app.getContactHelper().getContactList();
+        Contacts before = app.contact().all();
         app.goTo().addNewContact();
-        ContactData contact = new ContactData("Cyril", "Puhalskiy", "Ukraine,Dnipro", "+380682323232", "+30562343434", "Email1@email.com", "http://www.Homepageurl.com","Test group1");
-        app.getContactHelper().createContact(contact,true);
-        List<ContactData> after = app.getContactHelper().getContactList();
-        before.add(contact);
-        Comparator<? super ContactData> byId = (c1, c2) -> Integer.compare(c1.getId(),c2.getId());
-        before.sort(byId);
-        after.sort(byId);
-        Assert.assertEquals(before, after);
+        ContactData contact = new ContactData()
+                .withFirstname("Cyril")
+                .withLastname("Puhalskiy")
+                .withAddress("Ukraine,Dnipro")
+                .withWorkphonenumber("+380682323232")
+                .withHomephonenumber("+30562343434")
+                .withEmail1("Email1@email.com")
+                .withHomepage("http://www.Homepageurl.com")
+                .withGroupname("Test group1");
+        app.contact().create(contact,true);
+        Contacts after = app.contact().all();
+        assertThat(after.size(), equalTo(before.size() + 1));
+        assertThat(after, equalTo(
+                before.withAdded(contact.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
     }
 
 }
