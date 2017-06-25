@@ -22,6 +22,7 @@ public class ContactCreationTests extends TestBase{
                 .withAddress("Ukraine,Dnipro")
                 .withWorkphonenumber("+380682323232")
                 .withHomephonenumber("+30562343434")
+                .withMobilephone("+30503204044")
                 .withEmail1("Email1@email.com")
                 .withHomepage("http://www.Homepageurl.com")
                 .withGroupname("Test group1");

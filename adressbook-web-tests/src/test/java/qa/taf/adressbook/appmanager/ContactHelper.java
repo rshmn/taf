@@ -76,6 +76,23 @@ public class ContactHelper extends HelperBase {
         acceptAlert();
     }
 
+    public ContactData infoFromEditForm(ContactData contact) {
+        editContactById(contact.getId());
+        String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+        String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+        String home = wd.findElement(By.name("home")).getAttribute("value");
+        String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
+        String work = wd.findElement(By.name("work")).getAttribute("value");
+        String email1 = wd.findElement(By.name("email")).getAttribute("value");
+        String email2 = wd.findElement(By.name("email2")).getAttribute("value");
+        String email3 = wd.findElement(By.name("email3")).getAttribute("value");
+        String address = wd.findElement(By.name("address")).getAttribute("value");
+        wd.navigate().back();
+        return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
+                .withHomephonenumber(home).withWorkphonenumber(work).withMobilephone(mobile)
+                .withEmail1(email1).withEmail2(email2).withEmail3(email3).withAddress(address);
+
+    }
 
 
     public Contacts all() {
@@ -85,7 +102,11 @@ public class ContactHelper extends HelperBase {
             String name = element.findElement(By.cssSelector("td:nth-child(3)")).getText();
             String lastname = element.findElement(By.cssSelector("td:nth-child(2)")).getText();
             String id = element.findElement(By.tagName("input")).getAttribute("value");
-            contacts.add(new ContactData().withId(Integer.parseInt(id)).withFirstname(name).withLastname(lastname));
+            String allPhones = element.findElement(By.cssSelector("td:nth-child(6)")).getText();
+            String allEmails = element.findElement(By.cssSelector("td:nth-child(5)")).getText();
+            String address = element.findElement(By.cssSelector("td:nth-child(4)")).getText();
+            contacts.add(new ContactData().withId(Integer.parseInt(id)).withFirstname(name).withLastname(lastname)
+                    .withAllPhones(allPhones).withAllEmails(allEmails).withAddress(address));
 
         }
         return contacts;
