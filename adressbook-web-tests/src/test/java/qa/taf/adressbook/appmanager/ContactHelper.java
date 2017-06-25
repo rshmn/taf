@@ -32,7 +32,7 @@ public class ContactHelper extends HelperBase {
     public void fillContactForm(ContactData contactData, boolean creation) {
         type(By.name("firstname"), contactData.getFirstname());
         type(By.name("lastname"), contactData.getLastname());
-        //selectPhoto(By.xpath("//div[@id='content']/form/input[7]"),contactData.getPhotopath());
+        attach(By.xpath("//div[@id='content']/form/input[7]"),contactData.getPhoto());
         type(By.name("address"), contactData.getAddress());
         type(By.name("home"), contactData.getHomephonenumber());
         type(By.name("work"), contactData.getWorkphonenumber());
@@ -45,10 +45,6 @@ public class ContactHelper extends HelperBase {
         }
 
     }
-
-//    //private void selectPhoto(By locator, String photopath) {
-//        wd.findElement(locator).sendKeys(photopath);
-//    }
 
     private void setGroupForContact(ContactData contactData) {
         Select groupNameDropdown = new Select(wd.findElement(By.name("new_group")));
