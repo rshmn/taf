@@ -5,12 +5,4 @@ buildscript {
             url "https://plugins.gradle.org/m2/"
         }
     }
-    dependencies {
-        classpath 'net.ltgt.gradle:gradle-apt-plugin:0.9'
-        compile 'org.seleniumhq.selenium:selenium-java:3.4.0'
-        compile 'org.testng:testng:6.11'
-        compile 'org.hamcrest:java-hamcrest:2.0.0.0'
-        compile 'com.beust:jcommander:1.72'
-
-    }
 }

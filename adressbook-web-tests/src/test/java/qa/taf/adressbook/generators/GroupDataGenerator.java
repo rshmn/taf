@@ -3,6 +3,7 @@ package qa.taf.adressbook.generators;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
+import com.thoughtworks.xstream.XStream;
 import org.junit.runners.Parameterized;
 import qa.taf.adressbook.model.GroupData;
 
@@ -49,8 +50,10 @@ public class GroupDataGenerator {
                     .withName(String.format("test %s", i))
                     .withHeader(String.format("header %s", i))
                     .withFooter(String.format("footer %s", i)));
+
         }
         return groups;
+
     }
 
     private void save(List<GroupData> groups, File file) throws IOException {
