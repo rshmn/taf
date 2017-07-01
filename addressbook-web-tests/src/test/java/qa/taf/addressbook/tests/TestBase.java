@@ -1,9 +1,9 @@
-package qa.taf.adressbook.tests;
+package qa.taf.addressbook.tests;
 
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import qa.taf.adressbook.appmanager.ApplicationManager;
+import qa.taf.addressbook.appmanager.ApplicationManager;
 
 
 /**

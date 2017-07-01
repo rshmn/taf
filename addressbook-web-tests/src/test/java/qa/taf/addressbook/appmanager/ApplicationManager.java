@@ -1,4 +1,4 @@
-package qa.taf.adressbook.appmanager;
+package qa.taf.addressbook.appmanager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

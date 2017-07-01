@@ -1,15 +1,13 @@
-package qa.taf.adressbook.appmanager;
+package qa.taf.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import qa.taf.adressbook.model.GroupData;
-import qa.taf.adressbook.model.Groups;
+import qa.taf.addressbook.model.GroupData;
+import qa.taf.addressbook.model.Groups;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by rushman on 5/29/17.

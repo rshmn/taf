@@ -1,4 +1,4 @@
-package qa.taf.adressbook.generators;
+package qa.taf.addressbook.generators;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
@@ -6,7 +6,7 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thoughtworks.xstream.XStream;
-import qa.taf.adressbook.model.ContactData;
+import qa.taf.addressbook.model.ContactData;
 
 
 

@@ -1,7 +1,7 @@
-package qa.taf.adressbook.tests;
+package qa.taf.addressbook.tests;
 
 import org.testng.annotations.Test;
-import qa.taf.adressbook.model.ContactData;
+import qa.taf.addressbook.model.ContactData;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

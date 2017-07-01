@@ -1,15 +1,13 @@
-package qa.taf.adressbook.tests;
+package qa.taf.addressbook.tests;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import qa.taf.adressbook.model.ContactData;
-import qa.taf.adressbook.model.Contacts;
+import qa.taf.addressbook.model.ContactData;
+import qa.taf.addressbook.model.Contacts;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;

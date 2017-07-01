@@ -1,17 +1,16 @@
-package qa.taf.adressbook.appmanager;
+package qa.taf.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import qa.taf.adressbook.model.ContactData;
-import qa.taf.adressbook.model.Contacts;
+import qa.taf.addressbook.model.ContactData;
+import qa.taf.addressbook.model.Contacts;
 
 
 
 import java.util.List;
-import java.util.Set;
 
 
 /**

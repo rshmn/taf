@@ -1,4 +1,4 @@
-package qa.taf.adressbook.model;
+package qa.taf.addressbook.model;
 
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;

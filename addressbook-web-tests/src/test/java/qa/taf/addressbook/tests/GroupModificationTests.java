@@ -1,9 +1,9 @@
-package qa.taf.adressbook.tests;
+package qa.taf.addressbook.tests;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import qa.taf.adressbook.model.GroupData;
-import qa.taf.adressbook.model.Groups;
+import qa.taf.addressbook.model.GroupData;
+import qa.taf.addressbook.model.Groups;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;

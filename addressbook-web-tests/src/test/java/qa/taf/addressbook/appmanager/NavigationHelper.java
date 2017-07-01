@@ -1,8 +1,7 @@
-package qa.taf.adressbook.appmanager;
+package qa.taf.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by rushman on 5/29/17.
