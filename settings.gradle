@@ -1,2 +1,2 @@
-include ':adressbook-web-tests'
+include ':addressbook-web-tests'
 include ':Sandbox'

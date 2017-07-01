@@ -1,17 +1,29 @@
 package qa.taf.adressbook.model;
 
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.io.File;
 
+@XStreamAlias("contact")
 public class ContactData {
+    @XStreamOmitField
     private  int id = Integer.MAX_VALUE;
+    @Expose
     private  String firstname;
+    @Expose
     private  String lastname;
+    @Expose
     private  String address;
+    @Expose
     private  String homephonenumber;
     private  String workphonenumber;
+    @Expose
     private  String email1;
     private  String email2;
     private  String email3;
+    @Expose
     private  String groupname;
     private  String homepage;
     private  String mobilephone;
